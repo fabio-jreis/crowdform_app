@@ -2,6 +2,30 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "assets/fonts/Sintony-Bold.ttf",
+      "sha1": "e6bd6761341f0c9711dc923ce4f7dbc4670744f1"
+    },
+    {
+      "path": "assets/fonts/Sintony-Regular.ttf",
+      "sha1": "3b388241582f0f4de568abea012c4a03a35065a7"
+    },
+    {
+      "path": "assets/fonts/Sitara-Bold.ttf",
+      "sha1": "585efc22bb0209ab98dde7d17bf6f7f0f93dacc0"
+    },
+    {
+      "path": "assets/fonts/Sitara-BoldItalic.ttf",
+      "sha1": "460573f96275bc39acaa522747a27ca9624d4a1f"
+    },
+    {
+      "path": "assets/fonts/Sitara-Italic.ttf",
+      "sha1": "6a21fad5eaeaaf04f6d0d67b0e3e0528108f3394"
+    },
+    {
+      "path": "assets/fonts/Sitara-Regular.ttf",
+      "sha1": "ef548675c68f8b7139e8db940ed4095eded5c236"
+    },
+    {
       "path": "assets/fonts/Sora-Bold.ttf",
       "sha1": "34256bc34281fd98b79f1831caffa5fb488fbbcb"
     },

@@ -12,16 +12,22 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7699B88040F8A987B510C191 /* libPods-crowdform_app-crowdform_appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-crowdform_app-crowdform_appTests.a */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		C3E3EFBFB1624B87A88444FE /* Sora-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FBF4E74C512044369AEFA58C /* Sora-Bold.ttf */; };
-		65A36707983B4E3AA722C4FD /* Sora-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B8E8DBF922E46D6A991649B /* Sora-ExtraBold.ttf */; };
-		A7D95063178D4F3C86DE36CF /* Sora-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1594351A71B34406995523BA /* Sora-ExtraLight.ttf */; };
 		1B8969C8D9B34961B9C619E6 /* Sora-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 391704D3DB844995B71171E0 /* Sora-Light.ttf */; };
 		1F3B5E9C607E4BC8A7D39FC1 /* Sora-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66B513C4FEAA4B868FB62EAA /* Sora-Medium.ttf */; };
 		1FFEFDDF48FC477CAFE25F12 /* Sora-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BFA57712A18495DB9207C07 /* Sora-Regular.ttf */; };
-		4541D8491AA24D0E85863F76 /* Sora-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C274181EF8C471CB754A1C6 /* Sora-SemiBold.ttf */; };
 		27A1EFA7AFDA4B91BA5AE7A2 /* Sora-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D8044CCC55A4915B4BAA468 /* Sora-Thin.ttf */; };
+		3AC4A6987DAA4DF9B7DD4F5B /* Sintony-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5EAC6F0873264B6DA09C5B20 /* Sintony-Bold.ttf */; };
+		4541D8491AA24D0E85863F76 /* Sora-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C274181EF8C471CB754A1C6 /* Sora-SemiBold.ttf */; };
+		65A36707983B4E3AA722C4FD /* Sora-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B8E8DBF922E46D6A991649B /* Sora-ExtraBold.ttf */; };
+		7699B88040F8A987B510C191 /* libPods-crowdform_app-crowdform_appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-crowdform_app-crowdform_appTests.a */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		8CC3F391B9C24FC1BDC631D8 /* Sintony-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C728919215814C8198A95B4F /* Sintony-Regular.ttf */; };
+		A7D95063178D4F3C86DE36CF /* Sora-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1594351A71B34406995523BA /* Sora-ExtraLight.ttf */; };
+		C3E3EFBFB1624B87A88444FE /* Sora-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FBF4E74C512044369AEFA58C /* Sora-Bold.ttf */; };
+		688E783EDF8C427BACCC8258 /* Sitara-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96E34AFA86AC43E5BECC9DED /* Sitara-Bold.ttf */; };
+		A290A9EF6C944E6CB8E91F0C /* Sitara-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95BF9C50361C42EFAC527C57 /* Sitara-BoldItalic.ttf */; };
+		F7E3673DD98D4852A3B65762 /* Sitara-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66A0162F7C7F46B086A99A39 /* Sitara-Italic.ttf */; };
+		A57C702DA83C482F95CD5683 /* Sitara-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5FA58209E5F94DB5B4C66681 /* Sitara-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,22 +50,28 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = crowdform_app/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = crowdform_app/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = crowdform_app/main.m; sourceTree = "<group>"; };
+		1594351A71B34406995523BA /* Sora-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Sora-ExtraLight.ttf"; path = "../assets/fonts/Sora-ExtraLight.ttf"; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-crowdform_app-crowdform_appTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-crowdform_app-crowdform_appTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BFA57712A18495DB9207C07 /* Sora-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Sora-Regular.ttf"; path = "../assets/fonts/Sora-Regular.ttf"; sourceTree = "<group>"; };
+		391704D3DB844995B71171E0 /* Sora-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Sora-Light.ttf"; path = "../assets/fonts/Sora-Light.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-crowdform_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crowdform_app.debug.xcconfig"; path = "Target Support Files/Pods-crowdform_app/Pods-crowdform_app.debug.xcconfig"; sourceTree = "<group>"; };
+		4D8044CCC55A4915B4BAA468 /* Sora-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Sora-Thin.ttf"; path = "../assets/fonts/Sora-Thin.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-crowdform_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crowdform_app.release.xcconfig"; path = "Target Support Files/Pods-crowdform_app/Pods-crowdform_app.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-crowdform_app-crowdform_appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crowdform_app-crowdform_appTests.debug.xcconfig"; path = "Target Support Files/Pods-crowdform_app-crowdform_appTests/Pods-crowdform_app-crowdform_appTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-crowdform_app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-crowdform_app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EAC6F0873264B6DA09C5B20 /* Sintony-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Sintony-Bold.ttf"; path = "../assets/fonts/Sintony-Bold.ttf"; sourceTree = "<group>"; };
+		66B513C4FEAA4B868FB62EAA /* Sora-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Sora-Medium.ttf"; path = "../assets/fonts/Sora-Medium.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = crowdform_app/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-crowdform_app-crowdform_appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crowdform_app-crowdform_appTests.release.xcconfig"; path = "Target Support Files/Pods-crowdform_app-crowdform_appTests/Pods-crowdform_app-crowdform_appTests.release.xcconfig"; sourceTree = "<group>"; };
+		8B8E8DBF922E46D6A991649B /* Sora-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Sora-ExtraBold.ttf"; path = "../assets/fonts/Sora-ExtraBold.ttf"; sourceTree = "<group>"; };
+		9C274181EF8C471CB754A1C6 /* Sora-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Sora-SemiBold.ttf"; path = "../assets/fonts/Sora-SemiBold.ttf"; sourceTree = "<group>"; };
+		C728919215814C8198A95B4F /* Sintony-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Sintony-Regular.ttf"; path = "../assets/fonts/Sintony-Regular.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		FBF4E74C512044369AEFA58C /* Sora-Bold.ttf */ = {isa = PBXFileReference; name = "Sora-Bold.ttf"; path = "../assets/fonts/Sora-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		8B8E8DBF922E46D6A991649B /* Sora-ExtraBold.ttf */ = {isa = PBXFileReference; name = "Sora-ExtraBold.ttf"; path = "../assets/fonts/Sora-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		1594351A71B34406995523BA /* Sora-ExtraLight.ttf */ = {isa = PBXFileReference; name = "Sora-ExtraLight.ttf"; path = "../assets/fonts/Sora-ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		391704D3DB844995B71171E0 /* Sora-Light.ttf */ = {isa = PBXFileReference; name = "Sora-Light.ttf"; path = "../assets/fonts/Sora-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		66B513C4FEAA4B868FB62EAA /* Sora-Medium.ttf */ = {isa = PBXFileReference; name = "Sora-Medium.ttf"; path = "../assets/fonts/Sora-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		2BFA57712A18495DB9207C07 /* Sora-Regular.ttf */ = {isa = PBXFileReference; name = "Sora-Regular.ttf"; path = "../assets/fonts/Sora-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		9C274181EF8C471CB754A1C6 /* Sora-SemiBold.ttf */ = {isa = PBXFileReference; name = "Sora-SemiBold.ttf"; path = "../assets/fonts/Sora-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		4D8044CCC55A4915B4BAA468 /* Sora-Thin.ttf */ = {isa = PBXFileReference; name = "Sora-Thin.ttf"; path = "../assets/fonts/Sora-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FBF4E74C512044369AEFA58C /* Sora-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Sora-Bold.ttf"; path = "../assets/fonts/Sora-Bold.ttf"; sourceTree = "<group>"; };
+		96E34AFA86AC43E5BECC9DED /* Sitara-Bold.ttf */ = {isa = PBXFileReference; name = "Sitara-Bold.ttf"; path = "../assets/fonts/Sitara-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		95BF9C50361C42EFAC527C57 /* Sitara-BoldItalic.ttf */ = {isa = PBXFileReference; name = "Sitara-BoldItalic.ttf"; path = "../assets/fonts/Sitara-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		66A0162F7C7F46B086A99A39 /* Sitara-Italic.ttf */ = {isa = PBXFileReference; name = "Sitara-Italic.ttf"; path = "../assets/fonts/Sitara-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5FA58209E5F94DB5B4C66681 /* Sitara-Regular.ttf */ = {isa = PBXFileReference; name = "Sitara-Regular.ttf"; path = "../assets/fonts/Sitara-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,7 +178,7 @@
 			sourceTree = "<group>";
 		};
 		D1FAFC8E55CF496AB55F25AA /* Resources */ = {
-			isa = "PBXGroup";
+			isa = PBXGroup;
 			children = (
 				FBF4E74C512044369AEFA58C /* Sora-Bold.ttf */,
 				8B8E8DBF922E46D6A991649B /* Sora-ExtraBold.ttf */,
@@ -176,10 +188,16 @@
 				2BFA57712A18495DB9207C07 /* Sora-Regular.ttf */,
 				9C274181EF8C471CB754A1C6 /* Sora-SemiBold.ttf */,
 				4D8044CCC55A4915B4BAA468 /* Sora-Thin.ttf */,
+				5EAC6F0873264B6DA09C5B20 /* Sintony-Bold.ttf */,
+				C728919215814C8198A95B4F /* Sintony-Regular.ttf */,
+				96E34AFA86AC43E5BECC9DED /* Sitara-Bold.ttf */,
+				95BF9C50361C42EFAC527C57 /* Sitara-BoldItalic.ttf */,
+				66A0162F7C7F46B086A99A39 /* Sitara-Italic.ttf */,
+				5FA58209E5F94DB5B4C66681 /* Sitara-Regular.ttf */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
 			path = "";
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -285,6 +303,12 @@
 				1FFEFDDF48FC477CAFE25F12 /* Sora-Regular.ttf in Resources */,
 				4541D8491AA24D0E85863F76 /* Sora-SemiBold.ttf in Resources */,
 				27A1EFA7AFDA4B91BA5AE7A2 /* Sora-Thin.ttf in Resources */,
+				3AC4A6987DAA4DF9B7DD4F5B /* Sintony-Bold.ttf in Resources */,
+				8CC3F391B9C24FC1BDC631D8 /* Sintony-Regular.ttf in Resources */,
+				688E783EDF8C427BACCC8258 /* Sitara-Bold.ttf in Resources */,
+				A290A9EF6C944E6CB8E91F0C /* Sitara-BoldItalic.ttf in Resources */,
+				F7E3673DD98D4852A3B65762 /* Sitara-Italic.ttf in Resources */,
+				A57C702DA83C482F95CD5683 /* Sitara-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
