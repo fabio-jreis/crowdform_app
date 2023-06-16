@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, Pressable, Image, Button } from 'react-native';
-import Icon, {MaterialCommunityIcons} from 'react-native-vector-icons/FontAwesome';
+import Icon, { MaterialCommunityIcons } from 'react-native-vector-icons/FontAwesome';
 Icon.loadFont();
-
+import { useNavigation } from '@react-navigation/native';
 
 
 import eye from "../assets/images/eye.png"
@@ -10,6 +10,7 @@ import eye from "../assets/images/eye.png"
 import { useTogglePasswordVisibility } from "./hook/useTogglePasswordVisibility"
 
 export default function Login() {
+    const navigation = useNavigation();
     const [showPassword, setShowPassword] = useState(false);
     const { passwordVisibility, rightIcon, handlePasswordVisibility } = useTogglePasswordVisibility();
 
@@ -18,7 +19,8 @@ export default function Login() {
     };
 
     const handleClickSignUp = () => {
-        console.log('it works!');
+        console.log('function handleClickSignup')
+        navigation.navigate('NewAccount')
     }
           
 
