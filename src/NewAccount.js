@@ -1,14 +1,20 @@
 import React, { useState } from 'react'
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native'
 import CheckBox from '@react-native-community/checkbox'
+import { useNavigation } from '@react-navigation/native';
 
 export default function NewAccount() {
+    const navigation = useNavigation();
     const [showPassword, setShowPassword] = useState(false);
     const [isSelected, setSelection] = useState(false);
 
-    const handleClickTerms = () => {
+    const handleClickLinks = () => {
         console.log('function handleClickTerms')
         //navigation.navigate('NewAccount')
+    }
+
+    const handleClickLogin = () => {
+        navigation.navigate('Login')
     }
 
     const checkBoxChanged = () => {  
@@ -39,9 +45,9 @@ export default function NewAccount() {
                     <CheckBox style={styles.checkbox} value={isSelected} onValueChange={() => checkBoxChanged()} boxType='square'  />
                     <Text style={styles.newAccountText}>
                         Iam over 18 years of age and i have read and agree to the
-                        <Text style={styles.newAccountTextLink} onPress={handleClickTerms}> Terms of Service </Text>
+                        <Text style={styles.newAccountTextLink} onPress={handleClickLinks}> Terms of Service </Text>
                         and
-                        <Text style={styles.newAccountTextLink} onPress={handleClickTerms} > Privacy policy </Text>
+                        <Text style={styles.newAccountTextLink} onPress={handleClickLinks} > Privacy policy </Text>
                     </Text>        
                 </View>   
 
@@ -52,7 +58,7 @@ export default function NewAccount() {
                 <View style={styles.newAccountContent}>
                     <Text style={styles.newAccountText}>
                         Already have an account?
-                        <Text style={styles.newAccountTextLogIn}> Log in Here</Text>
+                        <Text style={styles.newAccountTextLogIn} onPress={handleClickLogin}> Log in Here</Text>
                     </Text>
                 </View>                                          
             </View>

@@ -22,6 +22,11 @@ export default function Login() {
         console.log('function handleClickSignup')
         navigation.navigate('NewAccount')
     }
+
+    const handleLogin = () => {
+        console.log('function handleLogin')
+        navigation.navigate('AppContent')        
+    }
           
 
     return(
@@ -59,7 +64,7 @@ export default function Login() {
                     
 
                 </View>
-                <TouchableOpacity style={styles.buttonLogin} >
+                <TouchableOpacity style={styles.buttonLogin} onPress={handleLogin} >
                     <Text style={styles.buttonTextLogin}>Login</Text>
                 </TouchableOpacity>
                 <View style={styles.signupContent}>
