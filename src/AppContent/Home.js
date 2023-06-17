@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Text, View, ScrollView, StyleSheet, Image, FlatList } from "react-native"
+import { Text, View, ScrollView, StyleSheet, Image, FlatList, TouchableOpacity, Alert } from "react-native"
 import Perfil from "../../assets/images/perfil.png"
 import Bell from "../../assets/images/bell.png"
 import ArrowDown from "../../assets/images/arrow_down.png"
@@ -11,7 +11,8 @@ import Sun from "../../assets/images/sun_icon.png"
 import Nature from "../../assets/images/nature_icon.png"
 import Chart from "../../assets/images/chart.png"
 
-import {useSelector} from 'react-redux'
+import { useSelector } from 'react-redux'
+import { useNavigation } from "@react-navigation/native"
 
 const Header = () => {
     return(
@@ -47,10 +48,15 @@ const Header = () => {
 }
 
 const ScrollableCards = ({funds}) => {
+
+    const navigation = useNavigation(); 
+
     return (
         <View>
-            <FlatList horizontal data={funds} style={styles.containerCards} renderItem={({item}) => (
-                <View style={styles.card}>
+            <FlatList horizontal data={funds} style={styles.containerCards} renderItem={({item, index}) => (
+                <TouchableOpacity 
+                    onPress={() => navigation.navigate('FundsDetails', {index})}
+                style={styles.card}>
                     <View style={styles.wrapedCard}>
                         <Image style={{marginBottom: 7}} source={item.icon === 'Wind' ? Wind : item.icon === 'Sun' ? Sun : Nature} />
                         <Text style={styles.fundsCardsLabel}>{item.title}</Text>
@@ -61,7 +67,7 @@ const ScrollableCards = ({funds}) => {
                             <Text style={styles.wrapedCardPercent}>{item.percentage}</Text>
                         </Text>
                     </View>
-                </View>
+                </TouchableOpacity>
             )} />
         </View>
       )

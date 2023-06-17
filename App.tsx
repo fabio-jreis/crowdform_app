@@ -18,6 +18,7 @@ import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 
 import FundsReducer from "./src/reducer/FundsReducer"
+import FundsDetails from "./src/AppContent/FundsDetails";
 
 const App = () => {
 
@@ -65,9 +66,19 @@ const App = () => {
       <NavigationContainer>
 
           { isSignedIn ? (
-            <>
-              <MyTabs />
-            </>
+            <Stack.Navigator>
+              <Stack.Screen
+                name="MyTabs"
+                component={MyTabs}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen name="FundsDetails" component={FundsDetails} />
+            </Stack.Navigator>
+
+
+            // <>
+            //   <MyTabs />
+            // </>
           ) : (
             <>
               <Stack.Navigator
