@@ -6,6 +6,8 @@ import ArrowDown from "../../assets/images/arrow_down.png"
 import ArrowUp from "../../assets/images/arrow_up.png"
 import EarnRewards from "../../assets/images/earn-rewards.png"
 import Bs from "../../assets/images/bs.png"
+import Wind from "../../assets/images/wind.png"
+import Chart from "../../assets/images/chart.png"
 
 const Header = () => {
     return(
@@ -45,7 +47,16 @@ const ScrollableCards = () => {
         <View>
           <ScrollView style={styles.containerCards} horizontal>
             <View style={styles.card}>
-              <Text>1</Text>
+                <View style={styles.wrapedCard}>
+                    <Image style={{marginBottom: 7}} source={Wind} />
+                    <Text style={styles.fundsCardsLabel}>Wind Fund</Text>
+                    <Image style={{marginBottom: 14}} source={Chart}/>
+                    <Text>
+                        <Text>$1032.23 </Text>
+                        <Image source={ArrowUp} />
+                        <Text style={styles.wrapedCardPercent}>3.51%</Text>
+                    </Text>
+                </View>
             </View>
             <View style={styles.card}>
               <Text>2</Text>
@@ -177,14 +188,14 @@ const styles = StyleSheet.create({
     },
     card: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
+        //alignItems: 'center',
+        //justifyContent: 'center',
         width: 140,
         height: 145,     
         borderWidth: 0.3,
         borderColor: 'E6E6E6', 
         borderRadius: 4,
-        marginRight: 15
+        marginRight: 15,
     },
     cardLearnMore: {
         backgroundColor: '#770FDF',
@@ -231,5 +242,30 @@ const styles = StyleSheet.create({
         color: '#000000',
         marginLeft: 12,
         marginTop: 20
+    },
+    fundsCardsLabel: {
+        fontFamily: 'Sora',
+        fontStyle: 'normal',
+        fontWeight: 600,
+        fontSize: 12,
+        lineHeight: 15,
+        letterSpacing: -0.02,
+        color: '#000000',
+        marginBottom: 14        
+    },
+    wrapedCard: {
+        marginTop: 12,
+        marginLeft: 12
+    },
+    wrapedCardPercent: {
+        fontFamily: 'Sora',
+        fontStyle: 'normal',
+        fontWeight: 400,
+        fontSize: 14,
+        lineHeight: 18,
+        textAlign: 'right',
+        letterSpacing: -0.02,
+        color: '#0FDF8F',
+        marginLeft: 2  
     }
 })
