@@ -1,3 +1,6 @@
+// Login
+// - Login form, redirecting to the home screen
+
 import React, { useState } from 'react'
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, Pressable, Image, Button } from 'react-native';
 import Icon, { MaterialCommunityIcons } from 'react-native-vector-icons/FontAwesome';
@@ -14,6 +17,9 @@ export default function Login() {
     const [showPassword, setShowPassword] = useState(false);
     const { passwordVisibility, rightIcon, handlePasswordVisibility } = useTogglePasswordVisibility();
 
+    const [email, setEmail] = useState('f@f.com');
+    const [password, setPassword] = useState('12345678'); 
+
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
     };
@@ -24,8 +30,17 @@ export default function Login() {
     }
 
     const handleLogin = () => {
-        console.log('function handleLogin')
-        navigation.navigate('AppContent')        
+        const strongRegex = new RegExp("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$");
+    
+        if (!strongRegex.test(email)) {
+            alert('Email is not correct')
+            return false;
+        } else if (password.length < 8) {
+            alert('The password needs to have a minimum of 8 characters.')
+            return false;
+        }
+
+        navigation.navigate('MyTabs')        
     }
           
 
@@ -34,13 +49,17 @@ export default function Login() {
             <Text style={styles.labelLogin}>Login</Text>
             <View style={styles.contentFields}>
                 <Text style={styles.labelInputLogin}>E-mail</Text>
-                <TextInput style={styles.textInputLogin}>john@doe.com</TextInput>
+                <TextInput  style={styles.textInputLogin}
+                            value={email}
+                            onChangeText={(text) => setEmail(text)}></TextInput>
 
                 <Text style={styles.labelInputLogin}>Password</Text>
                 <View style={styles.inputContainer}>
                     <TextInput  secureTextEntry={!showPassword} style={styles.textInputLogin} 
                                 placeholder='Minimum 8 characters' 
-                                placeholderTextColor={'#CFCFCF'} />  
+                                placeholderTextColor={'#CFCFCF'}
+                                value={password}
+                                onChangeText={(text) => setPassword(text)} />  
 
                     {/* <TouchableOpacity
                     activeOpacity={0.8}

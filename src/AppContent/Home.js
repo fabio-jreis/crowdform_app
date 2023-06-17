@@ -14,7 +14,7 @@ import Chart from "../../assets/images/chart.png"
 import { useSelector } from 'react-redux'
 import { useNavigation } from "@react-navigation/native"
 
-const Header = () => {
+const Header = ({user}) => {
     return(
         <View style={{flexDirection: 'column'}}>
             <View style={{flexDirection: 'row'}}>
@@ -22,7 +22,7 @@ const Header = () => {
                     <Image source={Perfil} style={styles.perfilImg} />
                 </View>
                 <View style={{flex: 9, alignItems: 'center', justifyContent: 'center', flexDirection: 'row'}}>
-                    <Text style={styles.acountNumber}>Account: $1,457.23</Text>
+                    <Text style={styles.acountNumber}>Account: {user.accountValue}</Text>
                     <Image source={ArrowDown} />
                 </View>
                 <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
@@ -34,9 +34,9 @@ const Header = () => {
                     <Text style={styles.potifolio}>Portifolio</Text>
                     
                     <Text>
-                        <Text style={styles.portifolioNumber}>$1,245.23 </Text>
+                        <Text style={styles.portifolioNumber}>{user.portifolio}</Text>
                         <Image source={ArrowUp} />
-                        <Text style={styles.portifolioPercentage}> 31.82%</Text>
+                        <Text style={styles.portifolioPercentage}>{user.portifolioPercentage}</Text>
                     </Text>
                 </View>
                 <View style={{flex: 1, alignItems: 'flex-end', justifyContent: 'center'}}>
@@ -76,11 +76,12 @@ const ScrollableCards = ({funds}) => {
 
 export default function Home() {
     
-    const funds = useSelector(states => states.data);
+    const funds = useSelector(states => states.FundsReducer.data);
+    const user = useSelector(states => states.UserReducer.data[0]); //get the unic user
 
     return(
         <View style={styles.contentHome}>
-            <Header />
+            <Header user={user} />
             <ScrollView>
                 <Text style={styles.fundsTitle}>Funds</Text> 
                 <ScrollableCards funds={funds} />

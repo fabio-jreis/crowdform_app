@@ -46,7 +46,7 @@ const initialState = {
 const FundsReducer = (state = initialState, action) => {
 
     switch(action.tyoe) {
-        case 'AAA': {
+        case 'RETURN_FUNDS': {
             let data = [...state.data];
             return data;
         };

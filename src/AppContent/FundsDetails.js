@@ -11,7 +11,7 @@ import {useRoute} from "@react-navigation/native"
 export default function FundsDetails() {
 
     const index = useRoute().params.index;
-    const funds = useSelector(states => states.data);
+    const funds = useSelector(states => states.FundsReducer.data);
     const fundDetail = funds[index];
 
     return(

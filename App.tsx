@@ -17,16 +17,17 @@ import PortifolioIcon from "./assets/images/portifolio_icon.png"
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 
-import FundsReducer from "./src/reducer/FundsReducer"
+import combineReducers from './src/reducer'
+
 import FundsDetails from "./src/AppContent/FundsDetails";
 
 const App = () => {
 
   const Stack = createNativeStackNavigator();
   const Tab = createBottomTabNavigator();
-  const [isSignedIn, setIsSignedIn] = useState(true);
+  const [isSignedIn, setIsSignedIn] = useState(false);
 
-  const store  = createStore(FundsReducer);
+  const store  = createStore(combineReducers);
 
   function MyTabs() {
     return (
@@ -65,34 +66,18 @@ const App = () => {
     <Provider store={store}>
       <NavigationContainer>
 
-          { isSignedIn ? (
-            <Stack.Navigator>
-              <Stack.Screen
-                name="MyTabs"
-                component={MyTabs}
-                options={{ headerShown: false }}
-              />
-              <Stack.Screen name="FundsDetails" component={FundsDetails} />
-            </Stack.Navigator>
-
-
-            // <>
-            //   <MyTabs />
-            // </>
-          ) : (
-            <>
-              <Stack.Navigator
-                screenOptions={{
-                  contentStyle:{
-                    backgroundColor:'#FFFFFF'
-                  }
-                }}>
-                <Stack.Screen name="Login" component={Login} options={{title: ""}} />
-                <Stack.Screen name="NewAccount" component={NewAccount} options={{title: ""}} />        
-              </Stack.Navigator>
-            </>
-
-          )}
+      <Stack.Navigator
+          screenOptions={{
+          contentStyle:{
+            backgroundColor:'#FFFFFF'
+          }
+        }}     
+      >
+        <Stack.Screen name="Login" component={Login} options={{title: ""}} />
+        <Stack.Screen name="MyTabs" component={MyTabs} options={{ headerShown: false }} />
+        <Stack.Screen name="FundsDetails" component={FundsDetails} />
+        <Stack.Screen name="NewAccount" component={NewAccount} options={{title: ""}} />    
+      </Stack.Navigator>     
 
       </NavigationContainer>
     </Provider>
