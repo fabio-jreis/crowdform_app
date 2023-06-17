@@ -18,8 +18,8 @@ const App = () => {
 
   function MyTabs() {
     return (
-      <Tab.Navigator>
-        <Tab.Screen name="Home" component={Home} />
+      <Tab.Navigator screenOptions={{ headerShown: false }}>
+        <Tab.Screen name="Home" component={Home}  />
         <Tab.Screen name="Trade" component={Trade} />
         <Tab.Screen name="Portifolio" component={Portifolio} />
       </Tab.Navigator>
