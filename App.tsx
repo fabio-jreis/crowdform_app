@@ -14,11 +14,18 @@ import HomeIcon from "./assets/images/home_icon.png"
 import TradeIcon from "./assets/images/trade_icon.png"
 import PortifolioIcon from "./assets/images/portifolio_icon.png"
 
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+
+import FundsReducer from "./src/reducer/FundsReducer"
+
 const App = () => {
 
   const Stack = createNativeStackNavigator();
   const Tab = createBottomTabNavigator();
   const [isSignedIn, setIsSignedIn] = useState(true);
+
+  const store  = createStore(FundsReducer);
 
   function MyTabs() {
     return (
@@ -54,28 +61,30 @@ const App = () => {
   }
 
   return(
-    <NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
 
-        { isSignedIn ? (
-          <>
-            <MyTabs />
-          </>
-        ) : (
-          <>
-            <Stack.Navigator
-              screenOptions={{
-                contentStyle:{
-                  backgroundColor:'#FFFFFF'
-                }
-              }}>
-              <Stack.Screen name="Login" component={Login} options={{title: ""}} />
-              <Stack.Screen name="NewAccount" component={NewAccount} options={{title: ""}} />        
-            </Stack.Navigator>
-          </>
+          { isSignedIn ? (
+            <>
+              <MyTabs />
+            </>
+          ) : (
+            <>
+              <Stack.Navigator
+                screenOptions={{
+                  contentStyle:{
+                    backgroundColor:'#FFFFFF'
+                  }
+                }}>
+                <Stack.Screen name="Login" component={Login} options={{title: ""}} />
+                <Stack.Screen name="NewAccount" component={NewAccount} options={{title: ""}} />        
+              </Stack.Navigator>
+            </>
 
-        )}
+          )}
 
-    </NavigationContainer>
+      </NavigationContainer>
+    </Provider>
   )
 }
 

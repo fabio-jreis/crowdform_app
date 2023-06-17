@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Text, View, ScrollView, StyleSheet, Image } from "react-native"
+import { Text, View, ScrollView, StyleSheet, Image, FlatList } from "react-native"
 import Perfil from "../../assets/images/perfil.png"
 import Bell from "../../assets/images/bell.png"
 import ArrowDown from "../../assets/images/arrow_down.png"
@@ -7,7 +7,11 @@ import ArrowUp from "../../assets/images/arrow_up.png"
 import EarnRewards from "../../assets/images/earn-rewards.png"
 import Bs from "../../assets/images/bs.png"
 import Wind from "../../assets/images/wind.png"
+import Sun from "../../assets/images/sun_icon.png"
+import Nature from "../../assets/images/nature_icon.png"
 import Chart from "../../assets/images/chart.png"
+
+import {useSelector} from 'react-redux'
 
 const Header = () => {
     return(
@@ -42,53 +46,38 @@ const Header = () => {
     )
 }
 
-const ScrollableCards = () => {
+const ScrollableCards = ({funds}) => {
     return (
         <View>
-          <ScrollView style={styles.containerCards} horizontal>
-            <View style={styles.card}>
-                <View style={styles.wrapedCard}>
-                    <Image style={{marginBottom: 7}} source={Wind} />
-                    <Text style={styles.fundsCardsLabel}>Wind Fund</Text>
-                    <Image style={{marginBottom: 14}} source={Chart}/>
-                    <Text>
-                        <Text>$1032.23 </Text>
-                        <Image source={ArrowUp} />
-                        <Text style={styles.wrapedCardPercent}>3.51%</Text>
-                    </Text>
+            <FlatList horizontal data={funds} style={styles.containerCards} renderItem={({item}) => (
+                <View style={styles.card}>
+                    <View style={styles.wrapedCard}>
+                        <Image style={{marginBottom: 7}} source={item.icon === 'Wind' ? Wind : item.icon === 'Sun' ? Sun : Nature} />
+                        <Text style={styles.fundsCardsLabel}>{item.title}</Text>
+                        <Image style={{marginBottom: 14}} source={Chart}/>
+                        <Text>
+                            <Text>{item.price}</Text>
+                            <Image source={ArrowUp} />
+                            <Text style={styles.wrapedCardPercent}>{item.percentage}</Text>
+                        </Text>
+                    </View>
                 </View>
-            </View>
-            <View style={styles.card}>
-              <Text>2</Text>
-            </View>
-            <View style={styles.card}>
-              <Text>3</Text>
-            </View>
-            <View style={styles.card}>
-              <Text>4</Text>
-            </View>
-            <View style={styles.card}>
-              <Text>5</Text>
-            </View>
-            <View style={styles.card}>
-              <Text>6</Text>
-            </View>
-            <View style={styles.card}>
-              <Text>7</Text>
-            </View>
-          </ScrollView>
+            )} />
         </View>
       )
 
 }
 
 export default function Home() {
+    
+    const funds = useSelector(states => states.data);
+
     return(
         <View style={styles.contentHome}>
             <Header />
             <ScrollView>
                 <Text style={styles.fundsTitle}>Funds</Text> 
-                <ScrollableCards />
+                <ScrollableCards funds={funds} />
                 <View style={styles.cardLearnMore}>
                     <View style={{flex: 1.5, justifyContent: 'center', alignItems: 'flex-start'}}>
                         <Text style={styles.cardLeranMoreText}>Lear more about</Text>
@@ -188,8 +177,6 @@ const styles = StyleSheet.create({
     },
     card: {
         flex: 1,
-        //alignItems: 'center',
-        //justifyContent: 'center',
         width: 140,
         height: 145,     
         borderWidth: 0.3,
