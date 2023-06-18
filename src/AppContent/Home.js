@@ -1,3 +1,7 @@
+// Home
+// - Present at least 3 different types of assets/funds, with mock graphics and values
+// - Bottom menu with 3 options - (Home, Trade and Portfolio) - Trade and Portfolio can lead to a blank page containing a title and lorem ipsum text
+
 import React, { useState } from 'react'
 import { Text, View, ScrollView, StyleSheet, Image, FlatList, TouchableOpacity, Alert } from "react-native"
 import Perfil from "../../assets/images/perfil.png"

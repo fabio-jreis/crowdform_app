@@ -1,3 +1,7 @@
+// Sign up
+// - Sign up form, show success screen when registering, need to agree with terms and conditions to enable submission button and no need to link terms and conditions to any screen
+// - After registration, show success screen and return to login
+
 import React, { useState } from 'react'
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image } from 'react-native'
 import CheckBox from '@react-native-community/checkbox'
