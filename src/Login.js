@@ -8,17 +8,16 @@ Icon.loadFont();
 import { useNavigation } from '@react-navigation/native';
 
 
-import eye from "../assets/images/eye.png"
+import Eye from "../assets/images/eye.png"
 
 import { useTogglePasswordVisibility } from "./hook/useTogglePasswordVisibility"
 
 export default function Login() {
     const navigation = useNavigation();
-    const [showPassword, setShowPassword] = useState(false);
-    const { passwordVisibility, rightIcon, handlePasswordVisibility } = useTogglePasswordVisibility();
+    const [showPassword, setShowPassword] = useState(true);
 
-    const [email, setEmail] = useState('f@f.com');
-    const [password, setPassword] = useState('12345678'); 
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState(''); 
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
@@ -59,27 +58,13 @@ export default function Login() {
                                 placeholder='Minimum 8 characters' 
                                 placeholderTextColor={'#CFCFCF'}
                                 value={password}
-                                onChangeText={(text) => setPassword(text)} />  
+                                onChangeText={(text) => setPassword(text)} />
 
-                    {/* <TouchableOpacity
-                    activeOpacity={0.8}
-                    style={styles.visibilityBtn}
-                    onPress={togglePasswordVisibility}>
-                    <Image
-                        source={
-                        showPassword
-                            ? require('../assets/images/eye.png')
-                            : require('../assets/images/eye.png')
-                        }
-                        style={styles.btnImage}
-                    />
-                    </TouchableOpacity> */}
-
-                    {/* <TouchableOpacity onPress={togglePasswordVisibility}>
-                            <Pressable onPress={handlePasswordVisibility}>
-                                <Icon name={rightIcon} size={22} color="#232323" />
-                        </Pressable>
-                        </TouchableOpacity> */}
+                    <TouchableOpacity
+                    style={styles.wrapperIcon}
+                    onPress={() => setShowPassword(!showPassword)}>
+                        <Image source={showPassword ? Eye : null} style={styles.icon} />
+                    </TouchableOpacity>                                
                     
 
                 </View>
@@ -170,8 +155,16 @@ const styles = StyleSheet.create({
     },
     signupTextLink: {
         textDecorationLine: 'underline'       
-    }
-        
+    },
+    icon: {
+        width: 30,
+        height: 24,
+    },   
+    wrapperIcon: {
+        position: 'absolute',
+        right: 0,
+        padding: 10,
+    },        
         
 
   });

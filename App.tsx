@@ -9,6 +9,8 @@ import NewAccount from "./src/NewAccount"
 import Home from "./src/AppContent/Home"
 import Trade from "./src/AppContent/Trade"
 import Portifolio from "./src/AppContent/Portifolio"
+import Terms from "./src/Terms"
+import Privacy from "./src/Privacy"
 import { Image } from "react-native";
 import HomeIcon from "./assets/images/home_icon.png"
 import TradeIcon from "./assets/images/trade_icon.png"
@@ -76,7 +78,9 @@ const App = () => {
         <Stack.Screen name="Login" component={Login} options={{title: ""}} />
         <Stack.Screen name="MyTabs" component={MyTabs} options={{ headerShown: false }} />
         <Stack.Screen name="FundsDetails" component={FundsDetails} />
-        <Stack.Screen name="NewAccount" component={NewAccount} options={{title: ""}} />    
+        <Stack.Screen name="NewAccount" component={NewAccount} options={{title: ""}} />
+        <Stack.Screen name="Terms" component={Terms} options={{title: ""}} />
+        <Stack.Screen name="Privacy" component={Privacy} options={{title: ""}} />    
       </Stack.Navigator>     
 
       </NavigationContainer>

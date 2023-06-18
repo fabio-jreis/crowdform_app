@@ -1,16 +1,27 @@
 import React, { useState } from 'react'
-import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image } from 'react-native'
 import CheckBox from '@react-native-community/checkbox'
 import { useNavigation } from '@react-navigation/native';
+import Eye from "../assets/images/eye.png"
 
 export default function NewAccount() {
     const navigation = useNavigation();
-    const [showPassword, setShowPassword] = useState(false);
+    const [showPassword, setShowPassword] = useState(true);
     const [isSelected, setSelection] = useState(false);
 
-    const handleClickLinks = () => {
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');    
+
+    const handleClickLinks = (type) => {
         console.log('function handleClickTerms')
-        //navigation.navigate('NewAccount')
+
+        if(type === 'Terms') {
+            navigation.navigate('Terms')
+        } else {
+            navigation.navigate('Privacy')
+        }
     }
 
     const handleClickLogin = () => {
@@ -21,44 +32,88 @@ export default function NewAccount() {
         setSelection(!isSelected);
     }
 
+    const handleCreateAccount = () => {
+        console.log("F: ", firstName)
+        const strongRegex = new RegExp("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$");
+
+        if(firstName === '') {
+            alert('Enter first name')
+            return false;
+        } else if(lastName === '') {
+            alert('Enter last name')
+            return false;
+        } else if(!strongRegex.test(email)) {
+            alert('Email is not correct')
+            return false;
+        } else if(password.length < 8) {
+            alert('The password needs to have a minimum of 8 characters.')
+            return false;
+        } else if(!isSelected) {
+            alert('Select Terms of service and Privacy policy')
+            return false;
+        }
+
+        navigation.navigate('Login')        
+    }    
+
     return(
         <View>
             <Text style={styles.labelNewAccount}>Create your account</Text>
             <View style={styles.contentFields}>
                 <Text style={styles.labelInputNewAccount}>Fisrt Name</Text>
-                <TextInput style={styles.textInputNewAccount}>john</TextInput>
+                <TextInput 
+                    style={styles.textInputNewAccount}
+                    value={firstName}
+                    onChangeText={(text) => setFirstName(text)}></TextInput>
                 
                 <Text style={styles.labelInputNewAccount}>Last Name</Text>
-                <TextInput style={styles.textInputNewAccount}>Smith</TextInput>
+                <TextInput 
+                    style={styles.textInputNewAccount}
+                    value={lastName}
+                    onChangeText={(text) => setLastName(text)}></TextInput>
 
                 <Text style={styles.labelInputNewAccount}>Email</Text>
-                <TextInput style={styles.textInputNewAccount}>joe.smith@crb.com.br</TextInput>  
+                <TextInput 
+                    style={styles.textInputNewAccount}
+                    value={email}
+                    onChangeText={(text) => setEmail(text)}></TextInput>  
 
                 <Text style={styles.labelInputNewAccount}>Password</Text>
                 <View style={styles.inputContainer}>
-                    <TextInput  secureTextEntry={!showPassword} style={styles.textInputNewAccount} 
-                                placeholder='Minimum 8 characters' 
-                                placeholderTextColor={'#CFCFCF'} />
+                    <TextInput  
+                        secureTextEntry={!showPassword} 
+                        style={styles.textInputNewAccount} 
+                        placeholder='Minimum 8 characters' 
+                        value={password}
+                        placeholderTextColor={'#CFCFCF'}
+                        onChangeText={(text) => setPassword(text)} />
+                    <TouchableOpacity
+                    style={styles.wrapperIcon}
+                    onPress={() => setShowPassword(!showPassword)}>
+                        <Image source={showPassword ? Eye : null} style={styles.icon} />
+                    </TouchableOpacity>   
+
+
                 </View>
 
                 <View style={styles.newAccountContent}>
                     <CheckBox style={styles.checkbox} value={isSelected} onValueChange={() => checkBoxChanged()} boxType='square'  />
                     <Text style={styles.newAccountText}>
                         Iam over 18 years of age and i have read and agree to the
-                        <Text style={styles.newAccountTextLink} onPress={handleClickLinks}> Terms of Service </Text>
+                        <Text style={styles.newAccountTextLink} onPress={() => handleClickLinks('Terms')}> Terms of Service </Text>
                         and
-                        <Text style={styles.newAccountTextLink} onPress={handleClickLinks} > Privacy policy </Text>
+                        <Text style={styles.newAccountTextLink} onPress={() => handleClickLinks('Privacy')} > Privacy policy </Text>
                     </Text>        
                 </View>   
 
                 <TouchableOpacity style={styles.buttonNewAccount} >
-                    <Text style={styles.buttonTextNewAccount}>Create account</Text>
+                    <Text style={styles.buttonTextNewAccount} onPress={() => handleCreateAccount()}>Create account</Text>
                 </TouchableOpacity> 
 
                 <View style={styles.newAccountContent}>
                     <Text style={styles.newAccountText}>
                         Already have an account?
-                        <Text style={styles.newAccountTextLogIn} onPress={handleClickLogin}> Log in Here</Text>
+                        <Text style={styles.newAccountTextLogIn} onPress={() => handleClickLogin()}> Log in Here</Text>
                     </Text>
                 </View>                                          
             </View>
@@ -134,8 +189,6 @@ const styles = StyleSheet.create({
         marginTop: 11,
         marginRight: 1,
         transform: [{ scaleX: 0.7 }, { scaleY: 0.7 }]
-        //border: '2px solid #E6E6E6',
-        //borderRadius: 2
     },
     buttonNewAccount: {
         marginTop: 37,
@@ -164,5 +217,14 @@ const styles = StyleSheet.create({
         marginTop: 13,
         textDecorationLine: 'underline'          
     },            
+    icon: {
+        width: 30,
+        height: 24,
+    },   
+    wrapperIcon: {
+        position: 'absolute',
+        right: 0,
+        padding: 10,
+    }, 
 
 })
